@@ -1,0 +1,69 @@
+{% block content %}
+<div class="search">
+
+    <div class="container">
+        <form action="/search" method="post" role="form">
+            <div class="form-group">
+                <label for="name">Not GOOGLE</label>
+                <input type="text" class="form-control" id="name" name="search"
+                       placeholder="Type a word, e.g., heo"
+                       value="{{request.form.search}}">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+
+    </div>
+</div>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <meta charset="UTF-8">
+    <title>Search_engine</title>
+    <link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .answers {
+          padding-top: 20px;
+          padding-bottom: 100px;
+          padding-left: 50px;
+        }
+        .testimonial-group > .row {
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        .testimonial-group > .row > .col-xs-4 {
+          display: inline-block;
+          float: none;
+        }
+
+
+
+
+    </style>
+</head>
+
+
+<div class="answers testimonial-group">
+        {% for v in value %}
+        <ul style="list-style-type:none;">
+            <li style="font-size:15px"><a href="{{ v[1] }}">{{ v[1] }}</a></li>
+            <li style="font-size:20px"><a href="{{ v[1] }}">{{ v[0] }}</a></li>
+        </ul>
+        <br>
+        <br>
+        {% endfor %}
+
+
+
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class=flash>
+    {{ message }}
+</div>
+{% endfor %}
+{% endblock %}
+
+</html>

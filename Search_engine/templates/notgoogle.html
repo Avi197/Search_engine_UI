@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not GOOGLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="cntr">
+    <div class="cntr-innr">
+        <div class="google">Not GOOGLE</div>
+        <form action="/result" method="post" role="form" onsubmit='this.submit();this.reset();return false;'>
+            <label class="search" for="inpt_search">
+                <input type="text" class="form-control" id="inpt_search" name="search"
+                       placeholder=""
+                       value="{{request.form.search}}">
+                <input type="submit" style="position: absolute; left: -9999px"/>
+            </label>
+        </form>
+        <p>Hover to search.</p>
+        <br><br><br>
+<!--        <div class="wrapr">-->
+<!--            <div class="first">how many results you want?</div>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <form action="/result" method="post" role="form" onsubmit='this.submit();this.reset();return false;'>-->
+<!--                <label class="num_search" for="in_search">-->
+<!--                    <input type="text" class="form-control" id="in_search" name="num_nn"-->
+<!--                           placeholder=""-->
+<!--                           value="{{request.form.num_nn}}">-->
+<!--                    <input type="submit" style="position: absolute; left: -9999px"/>-->
+<!--                </label>-->
+<!--            </form>-->
+<!--        </div>-->
+    </div>
+</div>
+
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
+<script src="{{ url_for('static', filename='script.js')}}"></script>
+
+</body>
+</html>

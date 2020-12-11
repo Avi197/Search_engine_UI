@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not GOOGLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result_style.css')}}">
+
+</head>
+<body>
+<div class="minigg">
+    <div class="name"><a href="/" style="color:white">Not GOOGLE</a></div>
+    <div class="query">
+        <div class="query-box">{{request.form.search}}</div>
+    </div>
+</div>
+<div class="cntr">
+    <div class="cntr-innr">
+        {% for v in value %}
+        <ul style="list-style-type:none;">
+            <li style="font-size:15px"><a href="{{ v[2] }}" style="color:white ">{{ v[2] }}</a></li>
+            <li style="font-size:25px"><a href="{{ v[2] }}" style="color:#00ff97"><span class="hover_this"><b>{{ v[0] }}</b></span></a></li>
+
+            <li style="font-size:15px"><a style="color:white">{{ v[1] }}</a></li>
+        </ul>
+        <hr style="height:1px;border-width:0;color:white;background-color:white">
+        <br>
+        <br>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>not GOOGLE</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='result_style_.css')}}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="header">-->
+<!--    <div id="topbar">-->
+<!--        <img id="searchbarimage" src="images/googlelogo_color_92x30dp.png"/>-->
+<!--        <div id="searchbar">-->
+<!--            <input id="searchbartext" type="text" value="{{request.form.search}}"/>-->
+<!--            <button id="searchbarbutton">-->
+<!--                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--                    <path-->
+<!--                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">-->
+<!--                    </path>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--    <div id="searchresultsarea">-->
+<!--        <p id="searchresultsnumber">About 155,000 results (0.56 seconds) </p>-->
+<!--        <div class="searchresult">-->
+<!--            {% for v in value %}-->
+<!--            <ul style="list-style-type:none;">-->
+<!--&lt;!&ndash;                <li style="font-size:15px"><a href="{{ v[1] }}" style="color:white">{{ v[1] }}</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li style="font-size:25px"><a href="{{ v[1] }}" style="color:white">{{ v[0] }}</a></li>&ndash;&gt;-->
+<!--                <li style="font-size:15px"><a href="{{ v[1] }}">{{ v[1] }}</a></li>-->
+<!--                <li style="font-size:25px"><a href="{{ v[1] }}">{{ v[0] }}</a></li>-->
+<!--            </ul>-->
+<!--            <br>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
+
